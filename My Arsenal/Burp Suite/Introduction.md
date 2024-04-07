@@ -145,6 +145,15 @@ Here are the steps to configure the Burp Suite Proxy with FoxyProxy:
 
 
 
+  8. **Test the Proxy**: Open Firefox and try accessing a website, such as the homepage for http://MACHINE_IP/. Your browser will hang, and the proxy will populate with the HTTP request. Congratulations, you have successfully intercepted your first request!
+
+Remember the following:
+
+   - When the proxy configuration is active, and the intercept is switched on in Burp Suite, your browser will hang whenever you make a request.
+   - Be cautious not to leave the intercept switched on unintentionally, as it can prevent your browser from making any requests.
+   - Right-clicking on a request in Burp Suite allows you to perform various actions, such as forwarding, dropping, sending to other tools, or selecting options from the right-click menu.
+
+Take note of these details as you begin using the Burp Suite Proxy.
 
 
 
