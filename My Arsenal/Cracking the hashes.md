@@ -100,7 +100,7 @@ john --rules --wordlist=wordlist.txt unshadowed.txt
 
 2. [Crackstation](https://crackstation.net/)
 
-3. [Hashkiller](https://hashkiller.co.uk/)
+3. [Hashkiller](https://hashkiller.io/listmanager)
 
 4. [100L5](https://10015.io/tools/md5-encrypt-decrypt)
 
