@@ -106,6 +106,8 @@ john --rules --wordlist=wordlist.txt unshadowed.txt
 
 5. [Base64](https://www.base64decode.org/)
 
+6. [MD5](https://www.md5online.org/md5-decrypt.html) 
+
 
 
 
