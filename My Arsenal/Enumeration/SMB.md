@@ -1,5 +1,19 @@
 <h1>$${\color{blue}SMB}$$</h1>
 
+### What is SMB?
+
+SMB - Server Message Block Protocol - is a client-server communication protocol used for sharing access to files, printers, serial ports and other resources on a network. 
+
+Servers make file systems and other resources (printers, named pipes, APIs) available to clients on the network. Client computers may have their own hard disks, but they also want access to the shared file systems and printers on the servers.Clients connect to servers using TCP/IP.
+
+### What runs SMB?
+
+Microsoft Windows operating systems since Windows 95 have included client and server SMB protocol support. Samba, an open source server that supports the SMB protocol, was released for Unix systems.
+
+
+<p align="center">
+<img src="https://github.com/4bo4yman/T00LS/assets/156849852/7bab627f-ada3-44fc-af96-d2f468fee9ed" >
+</p> 
 
 ```
 nmap -p445 — script smb-protocols <target ip>
@@ -45,6 +59,22 @@ As promised , let us first access it manually. To manually access the smb shares
 
 ## 1.enum4linux usage:
 
+Enum4linux is a tool used to enumerate SMB shares on both Windows and Linux systems. It is basically a wrapper around the tools in the Samba package and makes it easy to quickly extract information from the target pertaining to SMB. It's installed by default on Parrot and Kali, however if you need to install it, you can do so from the official [github](https://github.com/CiscoCXSecurity/enum4linux).
+
+The syntax of Enum4Linux is nice and simple: "enum4linux [options] ip"
+
+```
+TAG            FUNCTION
+
+-U             get userlist
+-M             get machine list
+-N             get namelist dump (different from -U and-M)
+-S             get sharelist
+-P             get password policy information
+-G             get group and member list
+-a             all of the above (full basic enumeration)
+```
+
 ```
 enum4linux -a -U 10.10.10.10              for enum SMB username;
 ```
@@ -69,6 +99,21 @@ smbmap -H <target IP> -u username -p password
 
 ## 3.smbclient usage:
 
+SMBClient
+
+Because we're trying to access an SMB share, we need a client to access resources on servers. We will be using SMBClient because it's part of the default samba suite.
+We can remotely access the SMB share using the syntax:
+
+```smbclient //[IP]/[SHARE]```
+
+```
+Followed by the tags:
+
+-U [name] : to specify the user
+
+-p [port] : to specify the port
+```
+
 ```
 smbclient -N -L \\\\10.10.10.10 
 ```
@@ -85,6 +130,7 @@ smbclient -U '%' -N \\\\<IP>\\<SHARE> # null session to connect to a windows sha
 smbclient -L <target IP>
 ```
 
+
 <p align="center">
 <img src="https://github.com/4bo4yman/T00LS/assets/156849852/53ecaeb2-ba7e-4099-834f-83d7cc25d33f" >
 </p> 
@@ -96,6 +142,10 @@ smbclient -L <target IP>
 <p align="center">
 <img src="https://github.com/4bo4yman/T00LS/assets/156849852/1798d351-1c30-43af-94fb-0aea257b035c" >
 </p> 
+
+> Hint: Try login Anonymous user and no password like this next picture.
+![image](https://github.com/4bo4yman/T00LS/assets/156849852/8e15eaff-b2d2-412b-8123-69a6ea2f2c86)
+
 
 ## 4.crackmapexec usage:
 
