@@ -18,6 +18,15 @@ where:
  #### ```-h``` specifies the IP address of the target.
  #### ```-s``` Specifies the path to the signature file containing the signature patterns used to identify different types of servers.
 
+
+In Kali Linux:
+
+```
+httprint -P0 -h <target_ip> -s /usr/share/httprint/signatures.txt
+```
+
+```-P0```  don't using ping ICMP
+
 Advantages of httprint tool:
 
  Accuracy of identification: The tool relies on a set of specific signatures to accurately analyze responses.
