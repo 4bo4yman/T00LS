@@ -22,7 +22,7 @@ where:
 In Kali Linux:
 
 ```
-httprint -P0 -h <target_ip> -s /usr/share/httprint/signatures.txt
+httprint -P0 -h 1.2.3.4 -s /usr/share/httprint/signatures.txt
 ```
 
 ```-P0```  don't using ping ICMP
